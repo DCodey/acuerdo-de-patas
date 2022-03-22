@@ -7,17 +7,10 @@ import IconButton from "@mui/material/IconButton";
 import PetsIcon from "@mui/icons-material/Pets";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import { jsPDF } from "jspdf";
+import generarPdf from '../generarPdf';
 
-const doc = new jsPDF();
-const generarPdf = (contenido) => {
-  doc.html(contenido);
-  doc.save("a4.pdf");
-
-}
-export default function Header({ contenido }) {
+function Header({ contenido }) {
   <script src="https://cdn.tailwindcss.com"></script>
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="bg-color">
@@ -53,4 +46,4 @@ export default function Header({ contenido }) {
   );
 }
 
-// export default Header;
+export default Header;
