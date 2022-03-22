@@ -2,6 +2,9 @@ import React from "react";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 
  function Footer() {
@@ -18,14 +21,21 @@ import Container from '@mui/material/Container';
               <Box>2022</Box>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box>Desarrollado con ❤ por: Nadia, Alvaro, Jian y Jairo </Box>
+              <Box>Desarrollado con ❤ por: <Link href="https://www.linkedin.com/in/nadia-men/" color="inherit">Nadia</Link>, <Link href="https://candidato.computrabajo.com.pe/candidate/cv/edit" color="inherit">Alvaro</Link>, <Link href="https://candidato.computrabajo.com.pe/candidate/cv/edit" color="inherit">Jian</Link> y <Link href="https://www.linkedin.com/in/nadia-men/" color="inherit">Jairo</Link></Box>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box><img src={github}/></Box>
+             <Button href="https://github.com/acuerdo-de-patas/acuerdos-de-patas" sx={{color: "inherit", display: "flex", justifyContent: "right", alignItems: "right" }} >                                                                                        
+             <GitHubIcon/>
+             </Button>
             </Grid>
-          </Grid>
-        </Container>
+          </Grid> 
+        </Container> 
       </Box>
+      
+
+  
+
+  
     
 );
 
