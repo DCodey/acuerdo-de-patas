@@ -1,22 +1,62 @@
 import React, { useState } from 'react'
-import Header from './Header'
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import FirmaPatas from './FirmaPatas'
+
+const defaultValores = {
+  valor: ""
+};
 
 export default function HomePage() {
-  const [contenido, setcontenido] = useState('')  
+  const [rows, setRows] = useState([defaultValores]);
+
+  function Row({onRemove}) {
+    return (
+      <div>
+        <FirmaPatas />
+        <div>        
+          <button onClick={onRemove}> eliminar </button>
+        </div>
+      </div>
+    );
+  }
+
+  const handleOnChange = (index, name, value) => {
+    const copyRows = [...rows];
+    copyRows[index] = {
+      ...copyRows[index],
+      [name]: value
+    };
+    setRows(copyRows);
+  };
+
+  const handleOnAdd = () => {
+    setRows(rows.concat(defaultValores));
+  };
+
+  const handleOnRemove = index => {
+    const copyRows = [...rows];
+    copyRows.splice(index, 1);
+    setRows(copyRows);
+  };
+
+
   return (
     <>
-      <Header contenido={contenido} />
-      <CKEditor
-          editor={ClassicEditor}
-          data={contenido}
-          onChange = {(event, editor) => {
-            const data = editor.getData();
-            setcontenido(data)
-          }}
-      />
-      
+      <div>        
+        {rows.map((row, index) => (
+          <Row
+            {...row}
+            onChange={(name, value) => handleOnChange(index, name, value)}
+            onRemove={() => handleOnRemove(index)}
+            handleOnAdd={handleOnAdd}
+            key={index}
+          />           
+        ))}
+      </div>
+      <br />
+      <div style={{textAlign:'center'}}>
+
+        <button onClick={handleOnAdd}>agregar</button>
+      </div>
     </>
     
   )

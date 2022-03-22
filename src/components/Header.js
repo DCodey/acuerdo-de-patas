@@ -9,7 +9,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import generarPdf from '../generarPdf';
 
-function Header({ contenido }) {
+function Header({ contenido, id }) {
   <script src="https://cdn.tailwindcss.com"></script>
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -35,7 +35,7 @@ function Header({ contenido }) {
             aria-label="menu"
             sx={{ mr: 2 }}
             onClick={() => {
-              generarPdf(contenido);
+              generarPdf(contenido, id);
             }}
           >
             <PictureAsPdfIcon />
