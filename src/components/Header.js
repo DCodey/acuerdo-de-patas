@@ -1,22 +1,28 @@
-import * as React from "react";
+import React from 'react'
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import PetsIcon from "@mui/icons-material/Pets";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import { jsPDF } from "jspdf";
 
+const doc = new jsPDF();
+const generarPdf = (contenido) => {
+  doc.html(contenido);
+  doc.save("a4.pdf");
 
-function Header() {
-    <script src="https://cdn.tailwindcss.com"></script>
+}
+export default function Header({ contenido }) {
+  <script src="https://cdn.tailwindcss.com"></script>
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="bg-color">
         <Toolbar>
-            <PetsIcon />
+          <PetsIcon />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Acuerdo de patas
           </Typography>
@@ -35,6 +41,9 @@ function Header() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => {
+              generarPdf(contenido);
+            }}
           >
             <PictureAsPdfIcon />
           </IconButton>
@@ -44,4 +53,4 @@ function Header() {
   );
 }
 
-export default Header;
+// export default Header;
