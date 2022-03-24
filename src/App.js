@@ -15,7 +15,7 @@ function App() {
   const [contenido, setcontenido] = useState('')
   return (
     <>
-    <HomePage />
+    {/* <HomePage /> */}
       {/* <Header contenido={contenido} />
       <CKEditor
         editor={ClassicEditor}
@@ -25,7 +25,7 @@ function App() {
           setcontenido(data)
         }}
       /> */}
-    {/* <Header /> */}
+    <Header />
     <Body/>
     <Footer />
     </>    

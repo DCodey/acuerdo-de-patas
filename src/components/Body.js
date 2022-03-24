@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -18,6 +18,8 @@ import patos from "./images/patos.png";
 import perro from "./images/perro.png";
 import pollo from "./images/pollo.png";
 import tigre from "./images/tigre.png";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const style = {
   position: "absolute",
@@ -80,9 +82,10 @@ const itemData = [
 ];
 
 function Body() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [contenido, setcontenido] = useState('')
 
   return (
     <div>
@@ -91,19 +94,15 @@ function Body() {
           Comience a escribir su acuerdo de patas en la siguiente caja de texto:
         </Box>
       </Typography>
-      <Box sx={{ mx: "auto", width: "100%", maxWidth: "sm" }}>
-        <TextField
-          id="outlined-multiline-static"
-          multiline
-          rows="10"
-          defaultValue="Escriba aquí su acuerdo de patas"
-          variant="outlined"
-          sx={{
-            width: "100%",
-            borderRadius: "borderRadius.default",
-            borderColor: "text.primary",
-          }}
-        />
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
+      <CKEditor
+        editor={ClassicEditor}
+        data={contenido}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          setcontenido(data)
+        }}
+      />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }} >
         <Tooltip title="Agregar">

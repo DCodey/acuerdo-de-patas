@@ -30,13 +30,7 @@ import Link from '@mui/material/Link';
             </Grid>
           </Grid> 
         </Container> 
-      </Box>
-      
-
-  
-
-  
-    
+      </Box>    
 );
 
 }
