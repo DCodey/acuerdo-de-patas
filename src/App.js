@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Header from './components/Header'
+// import Header from './components/Header'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
           setcontenido(data)
         }}
       /> */}
-    <Header />
+    {/* <Header /> */}
     <Body/>
     <Footer />
     </>    
