@@ -3,7 +3,10 @@ import Header from './components/Header'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import './App.css';
-import HomePage from './components/HomePage';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Body from "./components/Body";
+
 function App() {
   // const html = `
   // <div id='target' classname='color-red' style={'color:red'}>
@@ -22,8 +25,10 @@ function App() {
           setcontenido(data)
         }}
       /> */}
-
-    </>
+    <Header />
+    <Body/>
+    <Footer />
+    </>    
   );
 }
 
