@@ -7,7 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import PetsIcon from "@mui/icons-material/Pets";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import generarPdf from '../generarPdf';
+// import generarPdf from '../generarPdf';
+import PdfDownload from './PdfDowload';
 
 function Header({ contenido, id }) {
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +36,8 @@ function Header({ contenido, id }) {
             aria-label="menu"
             sx={{ mr: 2 }}
             onClick={() => {
-              generarPdf(contenido, id);
+              // PdfDownload(contenido)
+              // generarPdf(contenido, id);
             }}
           >
             <PictureAsPdfIcon />
