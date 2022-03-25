@@ -23,8 +23,8 @@ import Link from '@mui/material/Link';
             <Grid item xs={12} sm={4}>
               <Box>Desarrollado con ❤ por: <Link href="https://www.linkedin.com/in/nadia-men/" color="inherit">Nadia</Link>, <Link href="https://candidato.computrabajo.com.pe/candidate/cv/edit" color="inherit">Alvaro</Link>, <Link href="https://candidato.computrabajo.com.pe/candidate/cv/edit" color="inherit">Jian</Link> y <Link href="https://www.linkedin.com/in/nadia-men/" color="inherit">Jairo</Link></Box>
             </Grid>
-            <Grid item xs={12} sm={4}>
-             <Button href="https://github.com/acuerdo-de-patas/acuerdos-de-patas" sx={{color: "inherit", display: "flex", justifyContent: "right", alignItems: "right" }} >                                                                                        
+            <Grid item xs={12} sm={4} sx={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
+             <Button href="https://github.com/acuerdo-de-patas/acuerdos-de-patas" sx={{color: "inherit" }} >                                                                                        
              <GitHubIcon/>
              </Button>
             </Grid>
