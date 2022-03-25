@@ -42,4 +42,48 @@ footer {
   .align-items-center{
     align-items: center;
   }
+  .pdf{
+    width: 620px;
+    height: 877px;
+    border: 2px solid black;
+    margin: auto;
+  }
   
+  /* estilos de content */
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .pdf{
+    width: 620px;
+    height: 877px;
+    border: 2px solid black;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+  .acuerdo{
+    text-align: justify;
+    margin: 20px 50px;
+  }
+  h1{
+    text-align: center;
+  }
+  
+  .firmas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 50px 50px 50px;
+  }

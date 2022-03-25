@@ -10,7 +10,7 @@ function App() {
     <DataProvider>
       <Header />
       <Body/>
-      <ContentPdf/>
+      <ContentPdf />
       <Footer />
     </DataProvider>
   );
