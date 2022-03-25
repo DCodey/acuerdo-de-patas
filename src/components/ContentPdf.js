@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../context/DataContext';
+import '../css/style.css'
 
 export default function ContentPdf() {
   const { data } = useContext(DataContext)
