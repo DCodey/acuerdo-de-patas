@@ -10,6 +10,7 @@ import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { Icon, Tooltip } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
+import { Pdf } from '../Pdf';
 
 const theme = createTheme({
   palette: {
@@ -44,6 +45,7 @@ function Header() {
                 edge="start"
                 aria-label="menu"
                 sx={{ mr: 2, color: "text.primary" }}
+                // onClick={()=>{Pdf()}}
               >
                 <VisibilityIcon />
               </IconButton>

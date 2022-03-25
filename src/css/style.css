@@ -19,3 +19,27 @@ footer {
     width: 950px;
     margin: 0 auto;
   }
+  .container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .color-red{
+    color:red;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .d-flex{
+    display: flex;
+  }
+  .justify-content-center{
+    justify-content: center;
+  }
+  .justify-content-bettwen{
+    justify-content: space-between;
+  }
+  .align-items-center{
+    align-items: center;
+  }
+  

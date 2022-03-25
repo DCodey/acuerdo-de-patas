@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../context/DataContext';
 
 export default function ContentPdf() {
+  const {data} = useContext(DataContext)
   return (
-    <div>ContentPdf</div>
-  )
+    <>
+      {/* <div>{ JSON.stringify(data, null, 2)}</div> */}
+      <div>{ data.contenido }</div>
+      
+    </>    
+  );
 }

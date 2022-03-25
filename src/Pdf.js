@@ -1,10 +1,26 @@
 import { jsPDF } from "jspdf";
+import { DataContext } from './context/DataContext';
+import { useContext } from "react";
 
-const doc = new jsPDF();
-const generarPdf = (contenido, id) => {
-  doc.fromHTML(({id}.html(contenido)), 15, 15,{
-            'color': 'red',
-        });
-  doc.save("a4.pdf");
+// const doc = new jsPDF("p","pt","a4");
+
+const downloadPdf=(id="content")=>{
+  // doc.html(contenido, {
+    const doc = new jsPDF("p","pt","a4");
+    doc.html(document.querySelector(id), {
+    callback: function () {
+      doc.save("a4.pdf");
+    }
+  })
+  console.log('descargando pdf')
 }
-export default generarPdf;
+const viewPdf = ()=>{  
+  {console.log('vista previa del pdf')}
+}
+
+export const Pdf = ()=>{
+  const {data} = useContext(DataContext)
+
+  {console.log('ingreseee')}
+  {downloadPdf()}
+}
