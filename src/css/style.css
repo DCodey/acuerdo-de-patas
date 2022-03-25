@@ -42,4 +42,10 @@ footer {
   .align-items-center{
     align-items: center;
   }
+  .pdf{
+    width: 620px;
+    height: 877px;
+    border: 2px solid black;
+    margin: auto;
+  }
   

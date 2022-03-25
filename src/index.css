@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.pdf{
+  width: 620px;
+  height: 877px;
+  border: 2px solid black;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.acuerdo{
+  text-align: justify;
+  margin: 20px 50px;
+}
+h1{
+  text-align: center;
+}
+
+.firmas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 50px 50px 50px;
+}
