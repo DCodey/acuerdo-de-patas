@@ -7,6 +7,8 @@ import { Tooltip } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Modal from "@mui/material/Modal";
 import ModalPatas  from "./ModalPatas";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { ClassicEditor } from "@ckeditor/ckeditor5-build-classic";
 
 function Body() {
   const [open, setOpen] = useState(false);
