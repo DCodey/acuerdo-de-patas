@@ -26,8 +26,8 @@ const theme = createTheme({
 function Header() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ bgcolor: "background.main" }}>
+      <Box sx={{ flexGrow: 1, m: 2 }}>
+        <AppBar position="static" sx={{ bgcolor: "background.main", borderRadius: "16px" }}>
           <Toolbar>
             <Icon sx={{ mr: 2, color: "text.primary" }}>
               <PetsIcon />
