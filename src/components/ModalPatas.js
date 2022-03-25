@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
@@ -7,15 +7,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
-import conejo from "./images/conejo.png";
-import elefante from "./images/elefante.png";
-import gato from "./images/gato.png";
-import leon from "./images/leon.png";
-import oso from "./images/oso.png";
-import patos from "./images/patos.png";
-import perro from "./images/perro.png";
-import tigre from "./images/tigre.png";
-import mono from "./images/mono.png";
+import { DataContext } from "../context/DataContext";
 
 const theme = createTheme({
   palette: {
@@ -40,60 +32,13 @@ const style = {
   p: 4,
 };
 
-const itemData = [
-  {
-    img: conejo,
-    title: "Conejo",
-    desc: "Conejo",
-  },
-  {
-    img: elefante,
-    title: "Elefante",
-    desc: "Elefante",
-  },
-  {
-    img: gato,
-    title: "Gato",
-    desc: "Gato",
-  },
-  {
-    img: leon,
-    title: "Leon",
-    desc: "Leon",
-  },
-  {
-    img: oso,
-    title: "Oso",
-    desc: "Oso",
-  },
-  {
-    img: patos,
-    title: "Pato",
-    desc: "Pato",
-  },
-  {
-    img: perro,
-    title: "Perro",
-    desc: "Perro",
-  },
-  {
-    img: tigre,
-    title: "Tigre",
-    desc: "Tigre",
-  },
-  {
-    img: mono,
-    title: "Mono",
-    desc: "Mono",
-  },
-];
-
 function ModalPatas() {
+  const {item} = useContext(DataContext)
   return (
     <ThemeProvider theme={theme}>
       <Box sx={style}>
         <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={120}>
-          {itemData.map((item) => (
+          {item.map((item) => (
             <Button sx={{ p: 0 }}>
               <ImageListItem
                 key={item.img}

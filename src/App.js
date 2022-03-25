@@ -9,7 +9,7 @@ function App() {
   return (
     <DataProvider>
       <Header />
-      {/* <Body/> */}
+      <Body/>
       <ContentPdf/>
       <Footer />
     </DataProvider>
