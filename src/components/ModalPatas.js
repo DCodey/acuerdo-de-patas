@@ -32,14 +32,15 @@ const style = {
   p: 4,
 };
 
-function ModalPatas() {
+const ModalPatas = React.forwardRef((props, ref) => {
   const {item} = useContext(DataContext)
+  
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} ref={ref}>
       <Box sx={style}>
         <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={120}>
           {item.map((item) => (
-            <Button sx={{ p: 0 }}>
+            <Button key= {item.title} sx={{ p: 0 }}>
               <ImageListItem
                 key={item.img}
                 sx={{
@@ -74,6 +75,6 @@ function ModalPatas() {
       </Box>
     </ThemeProvider>
   );
-}
+});
 
 export default ModalPatas;

@@ -7,14 +7,15 @@ import { Tooltip } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Modal from "@mui/material/Modal";
 import ModalPatas  from "./ModalPatas";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import { ClassicEditor } from "@ckeditor/ckeditor5-build-classic";
+// import { CKEditor } from "@ckeditor/ckeditor5-react";
+// import { ClassicEditor } from "@ckeditor/ckeditor5-build-classic";
 
-function Body() {
+const Body = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [contenido, setcontenido] = useState('')
+  const ref = React.createRef();
+  // const [contenido, setcontenido] = useState('')
 
   return (
     <div>
@@ -23,7 +24,7 @@ function Body() {
           Comience a escribir su acuerdo de patas en la siguiente caja de texto:
         </Box>
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
+      {/* <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
       <CKEditor
         editor={ClassicEditor}
         data={contenido}
@@ -32,7 +33,7 @@ function Body() {
           setcontenido(data)
         }}
       />
-      </Box>
+      </Box> */}
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }} >
         <Tooltip title="Agregar">
           <IconButton
@@ -53,10 +54,8 @@ function Body() {
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
       >
-        <ModalPatas />
+        <ModalPatas ref={ref}/>
       </Modal>
     </div>
   );
