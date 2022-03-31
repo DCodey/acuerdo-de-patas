@@ -24,16 +24,16 @@ const Body = () => {
           Comience a escribir su acuerdo de patas en la siguiente caja de texto:
         </Box>
       </Typography>
-      {/* <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
-      <CKEditor
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
+      {/* <CKEditor
         editor={ClassicEditor}
         data={contenido}
         onChange={(event, editor) => {
           const data = editor.getData();
           setcontenido(data)
         }}
-      />
-      </Box> */}
+      /> */}
+      </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }} >
         <Tooltip title="Agregar">
           <IconButton
