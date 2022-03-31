@@ -24,10 +24,8 @@ const ContentPdf = React.forwardRef((props, ref) => {
       <div sx={style} id="pdf" className="pdf">
 
         <div class="cuerpo">
-          <h1>Hola mundo</h1>
+          <h1>Acuerdo de Patas</h1>
           <div className="acuerdo" dangerouslySetInnerHTML={{ __html: contenido }} />
-
-
         </div>
         <div className="firmas">
           <div className="firma1">
@@ -39,8 +37,6 @@ const ContentPdf = React.forwardRef((props, ref) => {
             <p>Firma 2</p>
           </div>
         </div>
-
-
       </div>
       <div className="boton">
         <Button variant="contained" color="secondary" startIcon={<DownloadingIcon />}>

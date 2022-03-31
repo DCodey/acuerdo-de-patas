@@ -81,6 +81,8 @@ code {
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .cuerpo {
@@ -106,8 +108,8 @@ h1 {
 }
 
 .boton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 10%);
 }
