@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -19,6 +19,7 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 
 import FroalaEditor from 'react-froala-wysiwyg';
+import { DataContext } from "../context/DataContext";
 
 // Include special components if required.
 // import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
@@ -32,7 +33,9 @@ const Body = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const ref = React.createRef();
-  // const [contenido, setcontenido] = useState('')
+  // const [data, setdata] = useState('ñam ñam')
+
+  const {setcontenido} = useContext(DataContext)
 
   return (
     <div>
@@ -43,8 +46,14 @@ const Body = () => {
       </Typography>
 
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3, mx: 10 }}>
-        <FroalaEditor tag='textarea' />
-
+        <FroalaEditor 
+          tag='textarea' 
+          onModelChange={(info)=>{
+            setcontenido(info)
+            console.log(info)
+          }
+          }
+        />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }} >
         <Tooltip title="Agregar">
