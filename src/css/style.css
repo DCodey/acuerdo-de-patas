@@ -64,14 +64,20 @@ footer {
       monospace;
   }
   .pdf{
+    position: inherit;
     width: 620px;
-    height: 877px;
+    height: 85%;
     border: 2px solid black;
-    margin: 50px auto;
+    margin: auto auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .acuerdo{
     text-align: justify;
@@ -85,7 +91,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0px 50px 50px 50px;
+    margin: 0px 50px 20px 50px;
   }
 
   .boton{
