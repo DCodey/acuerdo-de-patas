@@ -71,12 +71,26 @@ const itemData = [
 ];
 
 export const DataProvider = ({children})=> {
-  // const [data, setdata] = useState(datainitial)
-  const [contenido, setcontenido] = useState(datainitial.contenido)
-  const [item, setitem] = useState(itemData)
+  const [contenido, setContenido] = useState(datainitial.contenido)
+  const [firmas, setFirmas] = useState(datainitial.firmas)
+  const [firma, setFirma ] = useState(datainitial.firmas)
+  const [nombre_firma, setNombre_firma] = useState(datainitial.firmas)
+  const [items, setItems] = useState(itemData)
+  const datos = {
+    contenido,
+    setContenido,
+    firmas,
+    setFirmas,
+    firma,
+    setFirma,
+    nombre_firma,
+    setNombre_firma,
+    items,
+    setItems,
+  }
   return (
-    // <DataContext.Provider value={{data, setdata, item, itemData}}>
-    <DataContext.Provider value={{contenido, setcontenido, item, itemData}}>
+    <DataContext.Provider value={datos}>
+    {/* <DataContext.Provider value={{contenido, setcontenido, item, itemData}}> */}
       {children}
     </DataContext.Provider>
   )

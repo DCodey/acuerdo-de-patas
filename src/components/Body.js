@@ -33,9 +33,7 @@ const Body = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const ref = React.createRef();
-  // const [data, setdata] = useState('ñam ñam')
-
-  const {setcontenido} = useContext(DataContext)
+  const {setContenido} = useContext(DataContext)
 
   return (
     <div>
@@ -49,7 +47,7 @@ const Body = () => {
         <FroalaEditor 
           tag='textarea' 
           onModelChange={(info)=>{
-            setcontenido(info)
+            setContenido(info)
             console.log(info)
           }
           }
