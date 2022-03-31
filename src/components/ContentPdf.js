@@ -1,14 +1,27 @@
 import React from "react";
 // import { DataContext } from "../context/DataContext";
+import DownloadingIcon from '@mui/icons-material/Downloading';
+import Button from '@mui/material/Button';
 import "../css/style.css";
 
-export default function ContentPdf() {
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "auto",
+  border: "1px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const ContentPdf = React.forwardRef((props, ref) => {
   // const { data } = useContext(DataContext);
   return (
     <>
-      <div id="pdf" className="pdf">
+      <div sx={style} id="pdf" className="pdf">
         <div className="acuerdo">
-          <h1>HOla mundo</h1>
+          <h1>Hola mundo</h1>
           <p>
             Es un hecho establecido hace demasiado tiempo que un lector se
             distraerá con el contenido del texto de un sitio mientras que mira
@@ -34,7 +47,14 @@ export default function ContentPdf() {
             <p>Firma 2</p>
           </div>
         </div>
+        <div className="boton">
+          <Button variant="contained" color="secondary" startIcon={<DownloadingIcon/>}>
+            Descargar PDF
+          </Button>
+        </div>
       </div>
     </>
   );
-}
+});
+
+export default ContentPdf;

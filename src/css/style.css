@@ -71,7 +71,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  
+    background-color: white;
   }
   .acuerdo{
     text-align: justify;
@@ -86,4 +86,11 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     margin: 0px 50px 50px 50px;
+  }
+
+  .boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
   }
