@@ -69,6 +69,8 @@ const ModalPatas = React.forwardRef((props, ref) => {
           href="https://www.flaticon.es/packs/footprints-2"
           title="iconos"
           color="inherit"
+          underline="hover"
+          sx={{ fontSize: 15}}
         >
           Iconos creados por surang - Flaticon
         </Link>

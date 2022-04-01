@@ -1,12 +1,7 @@
 import React, { useContext, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import { Tooltip } from "@mui/material";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import Modal from "@mui/material/Modal";
-import ModalPatas from "./ModalPatas";
+import FirmaPatas from "./FirmaPatas";
 // import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import { ClassicEditor } from "@ckeditor/ckeditor5-build-classic";
 // Require Editor JS files.
@@ -29,21 +24,17 @@ import { DataContext } from "../context/DataContext";
 // import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
 
 const Body = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const ref = React.createRef();
   const {setContenido} = useContext(DataContext)
 
   return (
     <div>
       <Typography component="div">
-        <Box sx={{ fontWeight: "light", fontSize: "h6.fontSize", m: 3 }}>
+        <Box sx={{ fontWeight: "light", fontSize: 18, m: 3, ml: 10 }}>
           Comience a escribir su acuerdo de patas en la siguiente caja de texto:
         </Box>
       </Typography>
 
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3, mx: 10 }}>
+      <Box sx={{ mx: 25, my: 5 }}>
         <FroalaEditor 
           tag='textarea' 
           onModelChange={(info)=>{
@@ -53,29 +44,8 @@ const Body = () => {
           }
         />
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }} >
-        <Tooltip title="Agregar">
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="menu"
-            sx={{ mr: 2, color: "text.primary" }}
-            onClick={handleOpen}
-          >
-            <AddBoxIcon />
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mb: 5 }} >
-        <TextField label="Ingrese nombre" variant="standard" />
-      </Box>
 
-      <Modal
-        open={open}
-        onClose={handleClose}
-      >
-        <ModalPatas ref={ref} />
-      </Modal>
+      <FirmaPatas />
     </div>
   );
 }

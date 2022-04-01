@@ -1,102 +1,115 @@
 footer {
-    min-height: 70px;
-    background-color: #191919;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#191919', endColorStr='#000000');
-    border-top: 1px solid rgba(50, 50, 50, 0.3);
-    width: 100%;
-    position: relative;
-    clear: both;
-    margin-top: 0px;
-    padding-top: 0px;
-    overflow: visible;
-  }
-  
-  .footer {
-    border-top: 1px solid #222;
-  }
-  
-  .post-footer {
-    width: 950px;
-    margin: 0 auto;
-  }
-  .container{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .color-red{
-    color:red;
-  }
-  .text-center{
-    text-align: center;
-  }
-  .d-flex{
-    display: flex;
-  }
-  .justify-content-center{
-    justify-content: center;
-  }
-  .justify-content-bettwen{
-    justify-content: space-between;
-  }
-  .align-items-center{
-    align-items: center;
-  }
-  .pdf{
-    width: 620px;
-    height: 877px;
-    border: 2px solid black;
-    margin: auto;
-  }
-  
-  /* estilos de content */
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  .pdf{
-    position: inherit;
-    width: 620px;
-    height: 85%;
-    border: 2px solid black;
-    margin: auto auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .acuerdo{
-    text-align: justify;
-    margin: 20px 50px;
-  }
-  h1{
-    text-align: center;
-  }
-  
-  .firmas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0px 50px 20px 50px;
-  }
+  min-height: 70px;
+  background-color: #191919;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#191919', endColorStr='#000000');
+  border-top: 1px solid rgba(50, 50, 50, 0.3);
+  width: 100%;
+  position: relative;
+  clear: both;
+  margin-top: 0px;
+  padding-top: 0px;
+  overflow: visible;
+}
 
-  .boton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
+.footer {
+  border-top: 1px solid #222;
+}
+
+.post-footer {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color-red {
+  color: red;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-bettwen {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.pdf {
+  width: 620px;
+  height: 877px;
+  border: 2px solid black;
+  margin: auto;
+}
+
+/* estilos de content */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.pdf {
+  width: 620px;
+  height: 877px;
+  border: 2px solid black;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.acuerdo {
+  text-align: justify;
+  margin: 20px 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.firmas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 50px 50px 50px;
+}
+
+.boton {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
