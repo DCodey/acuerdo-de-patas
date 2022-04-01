@@ -1,38 +1,35 @@
-import './../App.css'
 import { jsPDF } from "jspdf";
 
-const doc = new jsPDF("p","pt","a4");
 
-const downloadPdf = () => {
-  doc.html(document.querySelector('#content'), {
+// const doc = new jsPDF("p","pt","a4");
+
+// const downloadPdf = () => {
+//   doc.html(document.querySelector('#content'), {
+//     callback: function () {
+//       doc.save("a4.pdf");
+//     }
+//   })
+// }
+const PdfDownload = () => {
+  console.log('ingrese al descargar')
+  const doc = new jsPDF("p","pt","a4");
+  // doc.html(document.querySelector('#content'), {
+  doc.html('<p>este es un parrafo</p>', {
     callback: function () {
       doc.save("a4.pdf");
     }
   })
 }
-const viewPdf = () => {
-  console.log('mostrando en pantalla')
-}
 
-const PdfDownload = ({contenido}, firma='firma', action='download') => {
-  <div id="content" className="container">
-    <h1 className='text-center'>Acuerdo de Patas</h1>
-    <div>
-      {contenido}
-    </div>
-    <div>
-      {firma}
-    </div>
-  </div>
-  {
-    switch (action) {
-      case 'download': downloadPdf()
-        break;
-      case 'view': viewPdf()
-        break;
-      default: downloadPdf()
-        break;
-    }
-  }
-}
+// const PdfDownload = ({contenido}, firma='firma', action='download') => {
+//   <div id="content" className="container">
+//     <h1 className='text-center'>Acuerdo de Patas</h1>
+//     <div>
+//       {contenido}
+//     </div>
+//     <div>
+//       {firma}
+//     </div>
+//   </div>
+// }
 export default PdfDownload;

@@ -11,7 +11,7 @@ import Modal from "@mui/material/Modal";
 import { Icon, Tooltip } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
-import { Pdf } from '../Pdf';
+import { PdfDownload } from '../Pdf';
 import ContentPdf from './ContentPdf';
 
 const theme = createTheme({
@@ -65,6 +65,7 @@ function Header() {
                 color="inherit"
                 aria-label="menu"
                 sx={{ mr: 2, color: "text.primary" }}
+                onClick={()=>{PdfDownload() }}
               >
                 <PictureAsPdfIcon />
               </IconButton>

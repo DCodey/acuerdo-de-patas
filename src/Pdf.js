@@ -1,26 +1,15 @@
 import { jsPDF } from "jspdf";
-import { DataContext } from './context/DataContext';
-import { useContext } from "react";
 
-// const doc = new jsPDF("p","pt","a4");
-
-const downloadPdf=(id="content")=>{
-  // doc.html(contenido, {
+const download =(content="<p>aqui ira el contenido del pdf</p>")=>{
     const doc = new jsPDF("p","pt","a4");
-    doc.html(document.querySelector(id), {
-    callback: function () {
-      doc.save("a4.pdf");
+    doc.html(content, {
+    callback: function (doc) {
+      doc.save("acuerdo de patas.pdf");
     }
   })
   console.log('descargando pdf')
-}
-const viewPdf = ()=>{  
-  {console.log('vista previa del pdf')}
-}
+};
 
-export const Pdf = ()=>{
-  const {data} = useContext(DataContext)
-
-  {console.log('ingreseee')}
-  {downloadPdf()}
+export const PdfDownload = ()=>{
+  download();
 }
