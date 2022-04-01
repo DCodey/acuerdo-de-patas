@@ -34,7 +34,7 @@ const style = {
 
 const ModalPatas = React.forwardRef((props, ref) => {
   const {items} = useContext(DataContext)
-  
+
   return (
     <ThemeProvider theme={theme} ref={ref}>
       <Box sx={style}>

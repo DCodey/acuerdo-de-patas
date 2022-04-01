@@ -20,6 +20,8 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditor from 'react-froala-wysiwyg';
 import { DataContext } from "../context/DataContext";
+import FirmaPatas from "./borrador/FirmaPatas";
+import AgregarFirmaPata from "./scripts/AgregarFirmaPata";
 
 // Include special components if required.
 // import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
@@ -34,6 +36,12 @@ const Body = () => {
   const handleClose = () => setOpen(false);
   const ref = React.createRef();
   const {setContenido} = useContext(DataContext)
+  
+  const alerta = () => {
+    alert("hola");
+    alert("chau");
+  }
+
 
   return (
     <div>
@@ -76,7 +84,9 @@ const Body = () => {
       >
         <ModalPatas ref={ref} />
       </Modal>
-    </div>
+      {/* <button onClick={alerta}> Agregar usuario </button> */}
+    <AgregarFirmaPata/>
+    </div> 
   );
 }
 
