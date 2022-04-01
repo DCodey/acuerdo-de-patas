@@ -12,8 +12,15 @@ import mono from "../components/images/mono.png";
 export const DataContext = createContext();
 
 const datainitial = {
-  contenido: 'el contenido de la caja',
-  firmas : 'aqui ira las firmas y nombre'
+  contenido: '',
+  firmas : [
+    {firma:'../imagenes/conejo.png',
+    nombre_firma: 'Jiancarlos',
+    },
+    {firma:'../imagenes/mono.png',
+    nombre_firma: 'Jairo',
+    }
+  ]
 }
 const itemData = [
   {
@@ -64,10 +71,26 @@ const itemData = [
 ];
 
 export const DataProvider = ({children})=> {
-  const [data, setdata] = useState(datainitial)
-  const [item, setitem] = useState(itemData)
+  const [contenido, setContenido] = useState(datainitial.contenido)
+  const [firmas, setFirmas] = useState(datainitial.firmas)
+  const [firma, setFirma ] = useState(datainitial.firmas)
+  const [nombre_firma, setNombre_firma] = useState(datainitial.firmas)
+  const [items, setItems] = useState(itemData)
+  const datos = {
+    contenido,
+    setContenido,
+    firmas,
+    setFirmas,
+    firma,
+    setFirma,
+    nombre_firma,
+    setNombre_firma,
+    items,
+    setItems,
+  }
   return (
-    <DataContext.Provider value={{data, setdata, item, itemData}}>
+    <DataContext.Provider value={datos}>
+    {/* <DataContext.Provider value={{contenido, setcontenido, item, itemData}}> */}
       {children}
     </DataContext.Provider>
   )
