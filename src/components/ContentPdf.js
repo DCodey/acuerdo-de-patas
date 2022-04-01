@@ -23,7 +23,7 @@ const ContentPdf = React.forwardRef((props, ref) => {
     <>
       <div sx={style} id="pdf" className="pdf">
 
-        <div class="cuerpo">
+        <div className="cuerpo">
           <h1>Acuerdo de Patas</h1>
           <div className="acuerdo" dangerouslySetInnerHTML={{ __html: contenido }} />
         </div>
@@ -48,3 +48,7 @@ const ContentPdf = React.forwardRef((props, ref) => {
 });
 
 export default ContentPdf;
+
+
+
+

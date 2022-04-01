@@ -1,0 +1,10 @@
+const FormularioPatas = (
+    ev,
+) => {
+    
+  ev.preventDefault();
+
+  return null;
+}
+
+export default FormularioPatas;
