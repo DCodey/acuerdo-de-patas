@@ -2,7 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import FirmaPatas from "../FirmaPatas";
 import FormularioPatas from "./FormularioPatas";
 import { Button } from "reactstrap";
-
+import Box from "@mui/material/Box";
+import { Tooltip } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import DeleteIcon from "@mui/icons-material/Delete";
 const defaultValores = {
     valor: ""
 };
@@ -16,9 +20,22 @@ function Row({ onRemove }) {
                     <FirmaPatas />
                 </div>
             </div>
-            <div className="col">
-                <Button color="danger" outline onClick={onRemove}> eliminar </Button>
-            </div>
+            <Box
+
+            >
+                <Tooltip title="Eliminar">
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        aria-label="delete"
+                        width="60"
+                        onClick={onRemove}
+                        sx={{ mr: 2, color: "text.primary" }}
+                    >
+                        <DeleteIcon color="error" />
+                    </IconButton>
+                </Tooltip>
+            </Box>
         </div>
     );
 }
@@ -48,15 +65,31 @@ export default function AgregarFirmaPata() {
 
     return (
         <div className="card" >
-
-            <Button color="primary" className="mt-1 mb-2" outline onClick={handleOnAdd}> Agregar valor </Button>
-
-            <form className="p-3" onSubmit={(ev) => FormularioPatas(
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    my: 2,
+                }}
+            >
+                <Tooltip title="Agregar Firma">
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        aria-label="menu"
+                        width="60"
+                        sx={{ mr: 2, color: "text.primary" }}
+                        onClick={handleOnAdd}
+                    >
+                        <AddBoxIcon />
+                    </IconButton>
+                </Tooltip>
+            </Box>
+            <form className="p-3 firmas-flex" onSubmit={(ev) => FormularioPatas(
                 ev
             )}>
-                <div className="row">
-                </div>
-                <label htmlFor="nome"></label>
+
                 {rows.map((row, index) => (
                     <Row
                         {...row}

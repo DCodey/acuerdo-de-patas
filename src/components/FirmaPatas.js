@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
-import AddBoxIcon from "@mui/icons-material/AddBox";
+import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
@@ -29,7 +29,7 @@ function FirmaPatas() {
             size="large"
             edge="start"
             aria-label="menu"
-            sx={{ mr: 2, color: "text.primary" }}
+            sx={{ color: "text.primary" }}
             onClick={handleOpen}
           >
             <img src={pata} width="60" height="60" />
@@ -39,27 +39,10 @@ function FirmaPatas() {
       <Box
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <TextField label="Ingrese nombre" variant="standard" />
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          my: 2,
-        }}
-      >
-        <Tooltip title="Agregar Firma">
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="menu"
-            width="60"
-            sx={{ mr: 2, color: "text.primary" }}
-          >
-            <AddBoxIcon />
-          </IconButton>
-        </Tooltip>
+        <TextField
+          sx={{ input: { textAlign: "center" } }}
+          label="Ingrese nombre"
+          variant="standard" />
       </Box>
 
       <Modal open={open} onClose={handleClose}>
