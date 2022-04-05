@@ -5,15 +5,13 @@ import FirmaPatas from "./FirmaPatas";
 // import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import { ClassicEditor } from "@ckeditor/ckeditor5-build-classic";
 // Require Editor JS files.
-import 'froala-editor/js/froala_editor.pkgd.min.js';
+import "froala-editor/js/froala_editor.pkgd.min.js";
 
 // Require Editor CSS files.
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
 
-
-
-import FroalaEditor from 'react-froala-wysiwyg';
+import FroalaEditor from "react-froala-wysiwyg";
 import { DataContext } from "../context/DataContext";
 import AgregarFirmaPata from "./scripts/AgregarFirmaPata";
 
@@ -25,13 +23,12 @@ import AgregarFirmaPata from "./scripts/AgregarFirmaPata";
 // import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
 
 const Body = () => {
-  const {setContenido} = useContext(DataContext)
-  
+  const { setContenido } = useContext(DataContext);
+
   const alerta = () => {
     alert("hola");
     alert("chau");
-  }
-
+  };
 
   return (
     <div>
@@ -42,19 +39,21 @@ const Body = () => {
       </Typography>
 
       <Box sx={{ mx: 25, my: 5 }}>
-        <FroalaEditor 
-          tag='textarea' 
-          onModelChange={(info)=>{
-            setContenido(info)
-            console.log(info)
-          }
-          }
+        <FroalaEditor
+          tag="textarea"
+          onModelChange={(info) => {
+            setContenido(info);
+            console.log(info);
+          }}
+          config={{
+            placeholderText: "Escriba su acuerdo de patas aquí",
+          }}
         />
       </Box>
       {/* <button onClick={alerta}> Agregar usuario </button> */}
-    <AgregarFirmaPata/>
-    </div> 
+      <AgregarFirmaPata />
+    </div>
   );
-}
+};
 
 export default Body;

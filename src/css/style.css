@@ -50,13 +50,6 @@ footer {
   align-items: center;
 }
 
-.pdf {
-  width: 620px;
-  height: 877px;
-  border: 2px solid black;
-  margin: auto;
-}
-
 /* estilos de content */
 body {
   margin: 0;
@@ -74,8 +67,7 @@ code {
 
 .pdf {
   width: 620px;
-  height: 877px;
-  border: 2px solid black;
+  height: 90%;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
