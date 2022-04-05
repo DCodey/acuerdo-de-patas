@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
 import DownloadingIcon from '@mui/icons-material/Downloading';
 import Button from '@mui/material/Button';
 import "../css/style.css";
+import jsPDF from "jspdf";
+import { PdfDownload } from "../Pdf";
 
 const style = {
   position: "absolute",
@@ -18,10 +20,10 @@ const style = {
 
 const ContentPdf = React.forwardRef((props, ref) => {
   const { contenido } = useContext(DataContext);
-
+  const [cont, setCont] = useState('');
   return (
     <>
-      <div sx={style} id="pdf" className="pdf">
+      <div sx={style} id="pdf" className="pdf" ref={ref}>
 
         <div className="cuerpo">
           <h1>Acuerdo de Patas</h1>
@@ -38,8 +40,15 @@ const ContentPdf = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <div className="boton">
-        <Button variant="contained" color="secondary" startIcon={<DownloadingIcon />}>
+      <div className="boton">        
+        <Button           
+          onClick={()=>{
+            setCont(document.querySelector('#pdf'));    
+            PdfDownload(cont);
+          }} 
+          variant="contained" 
+          color="secondary" 
+          startIcon={<DownloadingIcon />}>
           Descargar PDF
         </Button>
       </div>
