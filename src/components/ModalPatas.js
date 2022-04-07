@@ -33,7 +33,14 @@ const style = {
 };
 
 const ModalPatas = React.forwardRef((props, ref) => {
-  const {items} = useContext(DataContext)
+  const {items, setFirmas,firmas} = useContext(DataContext)  
+  const addFirmas = (url)=>{
+    setFirmas(frm=>[...frm,{
+      url:url,
+      nombre: props.nombre,
+    }])
+
+  }
 
   return (
     <ThemeProvider theme={theme} ref={ref}>
@@ -55,6 +62,7 @@ const ModalPatas = React.forwardRef((props, ref) => {
                   srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
+                  onClick={()=>{addFirmas(item.img)}}
                 />
                 <Typography
                   sx={{ display: "flex", justifyContent: "center", mt: 1, color: "text.primary" }}

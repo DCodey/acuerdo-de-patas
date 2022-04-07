@@ -13,17 +13,7 @@ export const DataContext = createContext();
 
 const datainitial = {
   contenido: 'content initial',
-  firmas : [
-    {url:'/static/media/conejo.89ceef0fb72ce06715d5.png',
-    nombre: 'name 1',
-    },
-    {url:'/static/media/mono.fe8ca3c4df3bb835c5b2.png',
-    nombre: 'name 2',
-    },
-    {url:'/static/media/perro.c75ac64f88a772713338.png',
-    nombre: 'name 3',
-    }
-  ]
+  firmas : []
 }
 const itemData = [
   {
