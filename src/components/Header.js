@@ -11,7 +11,7 @@ import Modal from "@mui/material/Modal";
 import { Icon, Tooltip } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
-import { PdfDownload } from '../Pdf';
+import { converHTMLToPDF } from '../Pdf';
 import ContentPdf from './ContentPdf';
 
 const theme = createTheme({
@@ -53,7 +53,7 @@ function Header() {
                 aria-label="menu"
                 sx={{ mr: 2, color: "text.primary" }}
                 onClick={handleOpen}
-                // onClick={()=>{Pdf()}}
+              // onClick={()=>{Pdf()}}
               >
                 <VisibilityIcon />
               </IconButton>
@@ -65,7 +65,7 @@ function Header() {
                 color="inherit"
                 aria-label="menu"
                 sx={{ mr: 2, color: "text.primary" }}
-                onClick={()=>{PdfDownload() }}
+                onClick={() => { converHTMLToPDF() }}
               >
                 <PictureAsPdfIcon />
               </IconButton>
@@ -77,7 +77,7 @@ function Header() {
           open={open}
           onClose={handleClose}
         >
-          <ContentPdf ref={ref}/>
+          <ContentPdf ref={ref} />
         </Modal>
       </Box>
     </ThemeProvider>
