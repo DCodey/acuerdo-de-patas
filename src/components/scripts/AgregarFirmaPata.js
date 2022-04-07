@@ -1,23 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState} from "react";
 import FirmaPatas from "../FirmaPatas";
-import FormularioPatas from "./FormularioPatas";
-import { Button } from "reactstrap";
 import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import DeleteIcon from "@mui/icons-material/Delete";
 const defaultValores = {
-    valor: ""
+    nombre: ""
 };
 
-function Row({ onRemove }) {
+function Row({ onRemove, nombre, onChange }) {
 
     return (
         <div className="row mb-4">
             <div className="col-md-6">
                 <div className="form-group-vertical">
-                    <FirmaPatas />
+                    <FirmaPatas nombre={nombre} onChange={onChange} />
                 </div>
             </div>
             <Box
@@ -57,10 +55,14 @@ export default function AgregarFirmaPata() {
         setRows(rows.concat(defaultValores));
     };
 
-    const handleOnRemove = index => {
+    const handleOnRemove = (index) => {
         const copyRows = [...rows];
         copyRows.splice(index, 1);
         setRows(copyRows);
+    };
+
+    const FPatas = (ev) => {
+        ev.preventDefault();
     };
 
     return (
@@ -86,17 +88,16 @@ export default function AgregarFirmaPata() {
                     </IconButton>
                 </Tooltip>
             </Box>
-            <form className="p-3 firmas-flex" onSubmit={(ev) => FormularioPatas(
+            <form className="p-3 firmas-flex" onSubmit={(ev) => FPatas(
                 ev
             )}>
-
                 {rows.map((row, index) => (
                     <Row
                         {...row}
                         onChange={(name, value) => handleOnChange(index, name, value)}
                         onRemove={() => handleOnRemove(index)}
                         handleOnAdd={handleOnAdd}
-                        key={index}
+                        key={index} 
                     />
 
                 ))}

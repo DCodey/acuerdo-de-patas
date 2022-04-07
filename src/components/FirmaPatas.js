@@ -8,7 +8,7 @@ import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
 
-function FirmaPatas() {
+function FirmaPatas({ nombre, onChange }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,7 +42,10 @@ function FirmaPatas() {
         <TextField
           sx={{ input: { textAlign: "center" } }}
           label="Ingrese nombre"
-          variant="standard" />
+          variant="standard"
+          value={nombre}
+          onChange={e => onChange("nombre", e.target.value)} />
+
       </Box>
 
       <Modal open={open} onClose={handleClose}>
