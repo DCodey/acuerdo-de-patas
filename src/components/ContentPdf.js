@@ -3,12 +3,10 @@ import { DataContext } from "../context/DataContext";
 import DownloadingIcon from '@mui/icons-material/Downloading';
 import Button from '@mui/material/Button';
 import "../css/style.css";
-import jsPDF from "jspdf";
 import { PdfDownload } from "../Pdf";
-import gato from "./images/gato.png";
 
 const ContentPdf = React.forwardRef((props, ref) => {
-  const { contenido } = useContext(DataContext);
+  const { contenido, firmas } = useContext(DataContext);
   const [cont, setCont] = useState('');
   return (
     <>
@@ -18,14 +16,14 @@ const ContentPdf = React.forwardRef((props, ref) => {
           <div className="acuerdo" dangerouslySetInnerHTML={{ __html: contenido }} />
         </div>
         <div className="firmas">
-          <div className="firma1">
-            <img src={gato} alt="gato" width="90"></img>
-            <p>Firma 1</p>
-          </div>
-          <div>
-            <img src={gato} alt="gato1" width="90"></img>
-            <p>Firma 2</p>
-          </div>
+          {
+            firmas.map((frm)=>(
+              <div key={frm.url}>
+                <img src={frm.url} alt={'alt'} width="90"/>
+                <p>{frm.nombre}</p>
+              </div>  
+            ))
+          }
         </div>
       </div>
       <div className="boton">        

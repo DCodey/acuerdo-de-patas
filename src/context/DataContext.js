@@ -12,13 +12,16 @@ import mono from "../components/images/mono.png";
 export const DataContext = createContext();
 
 const datainitial = {
-  contenido: '',
+  contenido: 'content initial',
   firmas : [
-    {firma:'../imagenes/conejo.png',
-    nombre_firma: 'Jiancarlos',
+    {url:'/static/media/conejo.89ceef0fb72ce06715d5.png',
+    nombre: 'name 1',
     },
-    {firma:'../imagenes/mono.png',
-    nombre_firma: 'Jairo',
+    {url:'/static/media/mono.fe8ca3c4df3bb835c5b2.png',
+    nombre: 'name 2',
+    },
+    {url:'/static/media/perro.c75ac64f88a772713338.png',
+    nombre: 'name 3',
     }
   ]
 }
