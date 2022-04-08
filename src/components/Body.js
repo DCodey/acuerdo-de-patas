@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import FirmaPatas from "./FirmaPatas";
 import "froala-editor/js/froala_editor.pkgd.min.js";
 
 // Require Editor CSS files.

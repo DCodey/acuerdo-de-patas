@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
@@ -32,7 +31,7 @@ function FirmaPatas({ nombre, onChange }) {
             sx={{ color: "text.primary" }}
             onClick={handleOpen}
           >
-            <img src={pata} width="60" height="60" />
+            <img src={pata} width="60" height="60" alt="pata"/>
           </IconButton>
         </Tooltip>
       </Box>

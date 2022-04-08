@@ -120,14 +120,24 @@ code {
   margin: 20px 50px;
 }
 
+.fechafirma {
+  text-align: right;
+  font-weight: bold;
+  margin: auto 50px 20px;
+}
+
 h1 {
+  text-align: center;
+}
+
+.nombrefirma {
   text-align: center;
 }
 
 .firmas {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0px 50px 50px 50px;
 }
 
@@ -136,6 +146,7 @@ h1 {
   top: 0;
   left: 50%;
   transform: translate(-50%, 10%);
+  background-color: #4CAF50;
 }
 
 .firmas-flex {
