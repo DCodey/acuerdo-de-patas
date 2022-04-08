@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import FirmaPatas from "../FirmaPatas";
 import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
@@ -81,7 +81,7 @@ export default function AgregarFirmaPata() {
                         edge="start"
                         aria-label="menu"
                         width="60"
-                        sx={{ mr: 2, color: "text.primary" }}
+                        sx={{ color: "#8243ca" }}
                         onClick={handleOnAdd}
                     >
                         <AddBoxIcon />
@@ -97,7 +97,7 @@ export default function AgregarFirmaPata() {
                         onChange={(name, value) => handleOnChange(index, name, value)}
                         onRemove={() => handleOnRemove(index)}
                         handleOnAdd={handleOnAdd}
-                        key={index} 
+                        key={index}
                     />
 
                 ))}

@@ -34,15 +34,15 @@ function Header() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, m: 2 }}>
-        <AppBar position="static" sx={{ bgcolor: "background.main", borderRadius: "16px" }}>
+        <AppBar position="static" sx={{ bgcolor: "#3f3f3f", borderRadius: "16px" }}>
           <Toolbar>
-            <Icon sx={{ mr: 2, color: "text.primary" }}>
+            <Icon sx={{ mr: 2, color: "white" }}>
               <PetsIcon />
             </Icon>
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, color: "text.primary", fontWeight: "bold", fontSize: 'h5.fontSize' }}
+              sx={{ flexGrow: 1, color: "white", fontWeight: "bold", fontSize: 'h5.fontSize' }}
             >
               Acuerdo de patas
             </Typography>
@@ -51,7 +51,7 @@ function Header() {
                 size="large"
                 edge="start"
                 aria-label="menu"
-                sx={{ mr: 2, color: "text.primary" }}
+                sx={{ mr: 2, color: "white" }}
                 onClick={handleOpen}
               // onClick={()=>{Pdf()}}
               >
@@ -64,7 +64,7 @@ function Header() {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2, color: "text.primary" }}
+                sx={{ mr: 2, color: "white" }}
                 onClick={() => { converHTMLToPDF() }}
               >
                 <PictureAsPdfIcon />
