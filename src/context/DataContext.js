@@ -13,8 +13,10 @@ export const DataContext = createContext();
 
 const datainitial = {
   contenido: 'content initial',
-  firmas : []
+  firmas : [
+  ]
 }
+
 const itemData = [
   {
     img: conejo,

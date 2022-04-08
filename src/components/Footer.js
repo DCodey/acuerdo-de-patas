@@ -9,11 +9,11 @@ import Link from '@mui/material/Link';
 
 function Footer() {
   return (
-    <div class="footer-basic">
+    <div className="footer-basic">
       <footer>
-        <div class="social"><a href="https://github.com/YIANKIcode/acuerdo-de-patas" target="_blank"><i class="icon ion-social-github"></i></a></div>
+        <div className="social"><a href="https://github.com/YIANKIcode/acuerdo-de-patas" target="_blank"><i className="icon ion-social-github"></i></a></div>
 
-        <p class="copyright">
+        <p className="copyright">
           Copyright ©2022 All rights reserved |Desarrollado con ❤ por:
           <Link href="https://www.linkedin.com/in/nadia-men/" target="_blank" color="#8243ca">Nadia</Link>,
           <Link href="https://candidato.computrabajo.com.pe/candidate/cv/edit" target="_blank" color="#8243ca">Alvaro</Link>,

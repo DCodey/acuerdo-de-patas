@@ -7,7 +7,7 @@ import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
 
-function FirmaPatas({ nombre, onChange }) {
+function FirmaPatas({ nombre, onChange, index }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -48,8 +48,8 @@ function FirmaPatas({ nombre, onChange }) {
       </Box>
 
       <Modal open={open} onClose={handleClose}>
-        <ModalPatas ref={ref} nombre={nombre} setOpen={setOpen}/>
-      </Modal>
+        <ModalPatas ref={ref} nombre={nombre} index={index} setOpen={setOpen}/>
+         </Modal>
     </div>
   );
 }

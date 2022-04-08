@@ -9,13 +9,13 @@ const defaultValores = {
     nombre: ""
 };
 
-function Row({ onRemove, nombre, onChange }) {
+function Row({ onRemove, nombre, onChange, index }) {
 
     return (
         <div className="row mb-4">
             <div className="col-md-6">
                 <div className="form-group-vertical">
-                    <FirmaPatas nombre={nombre} onChange={onChange} />
+                    <FirmaPatas nombre={nombre} onChange={onChange} index={index}/>
                 </div>
             </div>
             <Box
@@ -97,7 +97,8 @@ export default function AgregarFirmaPata() {
                         onChange={(name, value) => handleOnChange(index, name, value)}
                         onRemove={() => handleOnRemove(index)}
                         handleOnAdd={handleOnAdd}
-                        key={index}
+                        index={index}
+                        key={index} 
                     />
 
                 ))}

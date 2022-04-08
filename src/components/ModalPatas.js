@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
@@ -8,6 +8,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 import { DataContext } from "../context/DataContext";
+import { PropaneSharp } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -15,8 +16,8 @@ const theme = createTheme({
       main: grey[200],
     },
     text: {
-        primary: grey[900],
-      },
+      primary: grey[900],
+    },
   },
 });
 
@@ -33,22 +34,81 @@ const style = {
 };
 
 const ModalPatas = React.forwardRef((props, ref) => {
-  const {items, setFirmas} = useContext(DataContext)  
-  const addFirmas = (url)=>{
-    setFirmas(frm=>[...frm,{
-      url:url,
-      nombre: props.nombre,
-    }])
-    props.setOpen(false)
 
+  // const defaultValores = {
+  //   url: "",
+  //   nombre:""
+  // };
+
+
+  const { items, setFirmas, firmas } = useContext(DataContext)
+  const [url, setUrl] = useState('');
+  const [name, setName] = useState('');
+  // setName(props.nombre);
+
+  
+
+  // const addFirmas = (url)=>{
+  //   setFirmas(frm=>[...frm,{
+  //     url:url,
+  //     nombre: props.nombre,
+  //   }])
+  // }
+  const setNombreUrl = (url2) => {
+
+
+    setName(props.nombre);
+
+    const objeto = {
+      url: url2,
+      nombre: props.nombre,
+    }
+
+    console.log(objeto);
+    if (firmas[props.index] === undefined) {
+      setFirmas(frm => [...frm, objeto])
+    }
+
+    else {
+      console.log("INGRESOOOOOOOOOOO");
+      setFirmas(frm=>[...frm, frm[props.index]=objeto])
+      // setFirmas(frm => { frm.splice(props.index, 1, objeto) })
+      console.log("TERMINOOOOOO");
+
+      let arreglo = ["A", "B", "C", "D", "E"];
+      arreglo.splice();
+    }
+
+    console.log(firmas);
+
+    // setFirmas(
+    //   (frm) => {
+    //      frm[props.index]="Hola"
+    //     } else {
+    //       frm.push({objeto});
+    //     }
+    //   }
+    // );
+
+
+
+    // setFirmas(frm => [props.index], {
+    //   url: url,
+    //   nombre: props.nombre,
+    // });
+
+    props.setOpen(false);
   }
+
+
+
 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={style}>
         <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={120}>
           {items.map((item) => (
-            <Button key= {item.title} sx={{ p: 0 }}>
+            <Button key={item.title} sx={{ p: 0 }}>
               <ImageListItem
                 key={item.img}
                 sx={{
@@ -63,7 +123,7 @@ const ModalPatas = React.forwardRef((props, ref) => {
                   srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
-                  onClick={()=>{addFirmas(item.img)}}
+                  onClick={() => { setNombreUrl(item.img) }}
                 />
                 <Typography
                   sx={{ display: "flex", justifyContent: "center", mt: 1, color: "text.primary" }}
@@ -79,7 +139,7 @@ const ModalPatas = React.forwardRef((props, ref) => {
           title="iconos"
           color="inherit"
           underline="hover"
-          sx={{ fontSize: 15}}
+          sx={{ fontSize: 15 }}
         >
           Iconos creados por surang - Flaticon
         </Link>
@@ -89,3 +149,16 @@ const ModalPatas = React.forwardRef((props, ref) => {
 });
 
 export default ModalPatas;
+
+
+
+// setFirmas(
+//   (frm) => {
+//      if ( frm[props.index] == undefined) {
+//       console.log("ingreso");
+//       frm[props.index] = "hola";}
+//     // } else {
+//     //   frm.push({objeto});
+//     // }
+//   }
+// );
