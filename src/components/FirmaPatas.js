@@ -49,7 +49,7 @@ function FirmaPatas({ nombre, onChange }) {
       </Box>
 
       <Modal open={open} onClose={handleClose}>
-        <ModalPatas ref={ref} nombre={nombre}/>
+        <ModalPatas ref={ref} nombre={nombre} setOpen={setOpen}/>
       </Modal>
     </div>
   );

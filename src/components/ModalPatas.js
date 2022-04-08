@@ -33,17 +33,18 @@ const style = {
 };
 
 const ModalPatas = React.forwardRef((props, ref) => {
-  const {items, setFirmas,firmas} = useContext(DataContext)  
+  const {items, setFirmas} = useContext(DataContext)  
   const addFirmas = (url)=>{
     setFirmas(frm=>[...frm,{
       url:url,
       nombre: props.nombre,
     }])
+    props.setOpen(false)
 
   }
 
   return (
-    <ThemeProvider theme={theme} ref={ref}>
+    <ThemeProvider theme={theme}>
       <Box sx={style}>
         <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={120}>
           {items.map((item) => (
