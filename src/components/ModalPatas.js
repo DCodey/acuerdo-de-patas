@@ -35,73 +35,31 @@ const style = {
 
 const ModalPatas = React.forwardRef((props, ref) => {
 
-  // const defaultValores = {
-  //   url: "",
-  //   nombre:""
-  // };
-
-
   const { items, setFirmas, firmas } = useContext(DataContext)
-  const [url, setUrl] = useState('');
-  const [name, setName] = useState('');
-  // setName(props.nombre);
-
-  
-
-  // const addFirmas = (url)=>{
-  //   setFirmas(frm=>[...frm,{
-  //     url:url,
-  //     nombre: props.nombre,
-  //   }])
-  // }
+ 
   const setNombreUrl = (url2) => {
-
-
-    setName(props.nombre);
 
     const objeto = {
       url: url2,
       nombre: props.nombre,
+      key: props.index
     }
 
-    console.log(objeto);
     if (firmas[props.index] === undefined) {
       setFirmas(frm => [...frm, objeto])
+    } else {
+      const actualizaFirma = firmas.map(firma => {
+        if (firma.key === props.index) {
+          firma.nombre = props.nombre;
+          firma.url = url2;
+          return firma;
+        }
+        return firma;
+      });
+      setFirmas(actualizaFirma);
     }
-
-    else {
-      console.log("INGRESOOOOOOOOOOO");
-      setFirmas(frm=>[...frm, frm[props.index]=objeto])
-      // setFirmas(frm => { frm.splice(props.index, 1, objeto) })
-      console.log("TERMINOOOOOO");
-
-      let arreglo = ["A", "B", "C", "D", "E"];
-      arreglo.splice();
-    }
-
-    console.log(firmas);
-
-    // setFirmas(
-    //   (frm) => {
-    //      frm[props.index]="Hola"
-    //     } else {
-    //       frm.push({objeto});
-    //     }
-    //   }
-    // );
-
-
-
-    // setFirmas(frm => [props.index], {
-    //   url: url,
-    //   nombre: props.nombre,
-    // });
-
     props.setOpen(false);
   }
-
-
-
 
   return (
     <ThemeProvider theme={theme}>

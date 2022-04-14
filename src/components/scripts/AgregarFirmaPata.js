@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import FirmaPatas from "../FirmaPatas";
 import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { DataContext } from "../../context/DataContext";
 const defaultValores = {
     nombre: ""
 };
 
-function Row({ onRemove, nombre, onChange, index }) {
+function Row({ onRemove, nombre, onChange, index, imagen }) {
 
     return (
         <div className="row mb-4">
             <div className="col-md-6">
                 <div className="form-group-vertical">
-                    <FirmaPatas nombre={nombre} onChange={onChange} index={index}/>
+                    <FirmaPatas nombre={nombre} onChange={onChange} index={index} imagen={imagen}/>
                 </div>
             </div>
             <Box
@@ -40,6 +41,12 @@ function Row({ onRemove, nombre, onChange, index }) {
 
 export default function AgregarFirmaPata() {
 
+    const { items, setFirmas, firmas } = useContext(DataContext)
+    const imagenes=[];
+    firmas.map((firma,key) => {
+        imagenes[key]=firma.url;
+      });
+    console.log(imagenes);
     const [rows, setRows] = useState([defaultValores]);
 
     const handleOnChange = (index, name, value) => {
@@ -99,10 +106,11 @@ export default function AgregarFirmaPata() {
                         handleOnAdd={handleOnAdd}
                         index={index}
                         key={index} 
+                        imagen={imagenes[index]}
                     />
-
                 ))}
             </form>
         </div>
     );
 }
+

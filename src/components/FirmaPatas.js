@@ -7,12 +7,11 @@ import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
 
-function FirmaPatas({ nombre, onChange, index }) {
+function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const ref = React.createRef();
-
   return (
     <div>
       <Box
@@ -31,7 +30,7 @@ function FirmaPatas({ nombre, onChange, index }) {
             sx={{ color: "text.primary" }}
             onClick={handleOpen}
           >
-            <img src={pata} width="60" height="60" alt="pata"/>
+            <img src={imagen} width="60" height="60" alt="pata"/>
           </IconButton>
         </Tooltip>
       </Box>
