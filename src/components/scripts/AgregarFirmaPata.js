@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
+import CancelIcon from '@mui/icons-material/Cancel';
 import DeleteIcon from "@mui/icons-material/Delete";
 import { DataContext } from "../../context/DataContext";
 const defaultValores = {
@@ -12,16 +13,29 @@ const defaultValores = {
 
 function Row({ onRemove, nombre, onChange, index, imagen }) {
 
-    return (
+    return (        
         <div className="row mb-4">
             <div className="col-md-6">
+            <Box className="btn-delete">
+                <Tooltip title="Eliminar">
+                    {/* <IconButton
+                        size="large"
+                        edge="start"
+                        aria-label="delete"
+                        width="60"
+                        onClick={onRemove}
+                        sx={{ mr: 2, color: "text.primary" }}
+                    > */}
+                        <CancelIcon color="error"  onClick={onRemove}/>
+                    
+                    {/* </IconButton> */}
+                </Tooltip>
+            </Box>
                 <div className="form-group-vertical">
                     <FirmaPatas nombre={nombre} onChange={onChange} index={index} imagen={imagen}/>
-                </div>
+                </div>                
             </div>
-            <Box
-
-            >
+            {/* <Box>
                 <Tooltip title="Eliminar">
                     <IconButton
                         size="large"
@@ -34,7 +48,7 @@ function Row({ onRemove, nombre, onChange, index, imagen }) {
                         <DeleteIcon color="error" />
                     </IconButton>
                 </Tooltip>
-            </Box>
+            </Box> */}
         </div>
     );
 }
@@ -82,17 +96,9 @@ export default function AgregarFirmaPata() {
                     my: 2,
                 }}
             >
-                <Tooltip title="Agregar Firma">
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        aria-label="menu"
-                        width="60"
-                        sx={{ color: "#8243ca" }}
-                        onClick={handleOnAdd}
-                    >
-                        <AddBoxIcon />
-                    </IconButton>
+                <Tooltip title="Agregar Firma" className="btn-add-firma d-flex justify-content-center align-items-center"
+                    onClick={handleOnAdd}>
+                        <div><span className="btn-add">+</span></div>
                 </Tooltip>
             </Box>
             <form className="p-3 firmas-flex" onSubmit={(ev) => FPatas(

@@ -13,7 +13,7 @@ function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
   const handleClose = () => setOpen(false);
   const ref = React.createRef();
   return (
-    <div>
+    <>
       <Box
         sx={{
           display: "flex",
@@ -48,8 +48,8 @@ function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
 
       <Modal open={open} onClose={handleClose}>
         <ModalPatas ref={ref} nombre={nombre} index={index} setOpen={setOpen}/>
-         </Modal>
-    </div>
+      </Modal>
+    </>
   );
 }
 

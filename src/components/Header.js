@@ -33,25 +33,25 @@ function Header() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ flexGrow: 1, m: 2 }}>
-        <AppBar position="static" sx={{ bgcolor: "#3f3f3f", borderRadius: "16px" }}>
+      <Box sx={{ flexGrow: 1, mt: 3 }} className="container">
+        <AppBar position="static" sx={{ bgcolor: "#f0f2f5", borderRadius: "16px", p:0.7 }}>
           <Toolbar>
-            <Icon sx={{ mr: 2, color: "white" }}>
+            <Icon sx={{ mr: 2, color: "rgba(0,0,0,0.82)" }}>
               <PetsIcon />
             </Icon>
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, color: "white", fontWeight: "bold", fontSize: 'h5.fontSize' }}
+              sx={{ flexGrow: 1, color: "rgba(0,0,0,0.82)", fontWeight: "bold", fontSize: '1.5rem' }}
             >
-              Acuerdo de patas
+              ACUERDO DE PATAS
             </Typography>
             <Tooltip title="Visualizar">
               <IconButton
                 size="large"
                 edge="start"
                 aria-label="menu"
-                sx={{ mr: 2, color: "white" }}
+                sx={{ mr: 2, color: "rgba(0,0,0,0.82)" }}
                 onClick={handleOpen}
               // onClick={()=>{Pdf()}}
               >
@@ -64,7 +64,7 @@ function Header() {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2, color: "white" }}
+                sx={{ mr: 2, color: "rgba(0,0,0,0.82)" }}
                 onClick={() => { converHTMLToPDF() }}
               >
                 <PictureAsPdfIcon />

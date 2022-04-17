@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import '../css/style.css'
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "froala-editor/js/froala_editor.pkgd.min.js";
@@ -20,14 +21,8 @@ const Body = () => {
   };
 
   return (
-    <div>
-      <Typography component="div">
-        <Box sx={{ fontWeight: "light", fontSize: 18, m: 3, ml: 10 }}>
-          Comience a escribir su acuerdo de patas en la siguiente caja de texto:
-        </Box>
-      </Typography>
-
-      <Box sx={{ mx: 25, my: 5 }}>
+    <>
+      <Box className="editor-texto container">
         <FroalaEditor
           tag="textarea"
           onModelChange={(info) => {
@@ -38,10 +33,9 @@ const Body = () => {
             placeholderText: "Escriba su acuerdo de patas aquí",
           }}
         />
-      </Box>
-      {/* <button onClick={alerta}> Agregar usuario </button> */}
+      </Box>      
       <AgregarFirmaPata />
-    </div>
+    </>
   );
 };
 

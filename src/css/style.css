@@ -1,24 +1,55 @@
-.footer-basic {
+/* .footer-basic {
   padding: 40px 0;
   background-color: #3f3f3f;
   color: #4b4c4d;
   position: absolute;
   bottom: 0;
   width: 100%;
+} */
+.btn-add-firma{
+  border:solid 2px rgba(0,0,0,0.5);
+  /* background-color: #f0f2f5; */
+  padding: 1rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-style: dotted;
+  cursor: pointer;
+  margin-bottom: 2rem;
 }
-
-
-
-
-
-
+.btn-add-firma:hover{
+  background-color: #f5f5f5;
+}
+.btn-add{
+  margin-top: -10px;
+  font-size: 30px;
+  font-weight: 200;
+  color: rgba(0,0,0,0.5);
+}
+.editor-texto{
+  max-width: 1400px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.footer-basic {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  margin-top: 5rem;  
+}
+.footer-basic footer{   
+  border-top: 1.5px solid #d4d4d4;
+  padding: 25px 0;
+  color: #000000;
+}
 .footer-basic .social {
   text-align: center;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 }
 
 .footer-basic .social i {
-  color: white;
+  /* color: white; */
+  color: #000000;
 }
 
 .footer-basic .social>a {
@@ -29,7 +60,7 @@
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.8);
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;
@@ -43,7 +74,7 @@
   margin-top: 15px;
   text-align: center;
   font-size: 13px;
-  color: #aaa;
+  color: #000000;
   margin-bottom: 0;
 }
 
@@ -162,4 +193,11 @@ h1 {
   margin: auto;
   display: flex;
   flex-direction: row;
+}
+.border{
+  border: solid 0.5px #000000;
+}
+.btn-delete{
+  text-align: right;
+  margin-bottom: -2rem;
 }
