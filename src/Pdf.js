@@ -6,6 +6,7 @@ export const converHTMLToPDF = (cont) => {
     callback: function (pdf) {
       pdf.save("myfile.pdf", {
       });
-    }
+    },
+    margin: [20, 0, 27, 0],
   });
 }

@@ -166,9 +166,10 @@ h1 {
 }
 
 .firmas {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  text-align: center;
   margin: 0px 50px 50px 50px;
 }
 
@@ -181,7 +182,6 @@ h1 {
 }
 
 .firmas-flex {
-
   margin: 50px;
   display: flex;
   flex-direction: row;
