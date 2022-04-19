@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import { Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-import CancelIcon from '@mui/icons-material/Cancel';
 import DeleteIcon from "@mui/icons-material/Delete";
 import { DataContext } from "../../context/DataContext";
 const defaultValores = {
@@ -13,29 +12,16 @@ const defaultValores = {
 
 function Row({ onRemove, nombre, onChange, index, imagen }) {
 
-    return (        
+    return (
         <div className="row mb-4">
             <div className="col-md-6">
-            <Box className="btn-delete">
-                <Tooltip title="Eliminar">
-                    {/* <IconButton
-                        size="large"
-                        edge="start"
-                        aria-label="delete"
-                        width="60"
-                        onClick={onRemove}
-                        sx={{ mr: 2, color: "text.primary" }}
-                    > */}
-                        <CancelIcon color="error"  onClick={onRemove}/>
-                    
-                    {/* </IconButton> */}
-                </Tooltip>
-            </Box>
                 <div className="form-group-vertical">
-                    <FirmaPatas nombre={nombre} onChange={onChange} index={index} imagen={imagen}/>
-                </div>                
+                    <FirmaPatas nombre={nombre} onChange={onChange} index={index} imagen={imagen} />
+                </div>
             </div>
-            {/* <Box>
+            <Box
+
+            >
                 <Tooltip title="Eliminar">
                     <IconButton
                         size="large"
@@ -48,7 +34,7 @@ function Row({ onRemove, nombre, onChange, index, imagen }) {
                         <DeleteIcon color="error" />
                     </IconButton>
                 </Tooltip>
-            </Box> */}
+            </Box>
         </div>
     );
 }
@@ -56,11 +42,10 @@ function Row({ onRemove, nombre, onChange, index, imagen }) {
 export default function AgregarFirmaPata() {
 
     const { items, setFirmas, firmas } = useContext(DataContext)
-    const imagenes=[];
-    firmas.map((firma,key) => {
-        imagenes[key]=firma.url;
-      });
-    console.log(imagenes);
+    const imagenes = [];
+    firmas.map((firma, key) => {
+        imagenes[key] = firma.url;
+    });
     const [rows, setRows] = useState([defaultValores]);
 
     const handleOnChange = (index, name, value) => {
@@ -70,6 +55,7 @@ export default function AgregarFirmaPata() {
             [name]: value
         };
         setRows(copyRows);
+        actualizaNombre(index,value);
     };
 
     const handleOnAdd = () => {
@@ -80,7 +66,38 @@ export default function AgregarFirmaPata() {
         const copyRows = [...rows];
         copyRows.splice(index, 1);
         setRows(copyRows);
+        eliminarCaja(index);
     };
+
+    const eliminarCaja = (index) => {
+        if (firmas[index] === undefined) {
+            console.log("es indefinido");
+        } else {
+            firmas.splice(index, 1);
+            setFirmas(firmas);
+            console.log(firmas);
+            actualizarKeys();
+        }
+    }
+
+    const actualizarKeys = () => {
+        const actualizaFirma = firmas.map((firma, indice) => {
+            firma.key = indice;
+            return firma;
+          });
+          setFirmas(actualizaFirma);
+    }
+
+    const actualizaNombre=(index,value)=>{
+        const actualizaNombre = firmas.map(firma => {
+            if (firma.key === index) {
+              firma.nombre = value;
+              return firma;
+            }
+            return firma;
+          });
+          setFirmas(actualizaNombre);
+    }
 
     const FPatas = (ev) => {
         ev.preventDefault();
@@ -96,9 +113,17 @@ export default function AgregarFirmaPata() {
                     my: 2,
                 }}
             >
-                <Tooltip title="Agregar Firma" className="btn-add-firma d-flex justify-content-center align-items-center"
-                    onClick={handleOnAdd}>
-                        <div><span className="btn-add">+</span></div>
+                <Tooltip title="Agregar Firma">
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        aria-label="menu"
+                        width="60"
+                        sx={{ color: "#8243ca" }}
+                        onClick={handleOnAdd}
+                    >
+                        <AddBoxIcon />
+                    </IconButton>
                 </Tooltip>
             </Box>
             <form className="p-3 firmas-flex" onSubmit={(ev) => FPatas(
@@ -111,7 +136,7 @@ export default function AgregarFirmaPata() {
                         onRemove={() => handleOnRemove(index)}
                         handleOnAdd={handleOnAdd}
                         index={index}
-                        key={index} 
+                        key={index}
                         imagen={imagenes[index]}
                     />
                 ))}

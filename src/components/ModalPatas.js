@@ -47,7 +47,8 @@ const ModalPatas = React.forwardRef((props, ref) => {
 
     if (firmas[props.index] === undefined) {
       setFirmas(frm => [...frm, objeto])
-    } else {
+    } 
+    else {
       const actualizaFirma = firmas.map(firma => {
         if (firma.key === props.index) {
           firma.nombre = props.nombre;
