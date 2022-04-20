@@ -34,7 +34,7 @@ function Header() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, mt: 3 }} className="container">
-        <AppBar position="static" sx={{ bgcolor: "#f0f2f5", borderRadius: "16px", p:0.7 }}>
+        <AppBar position="static" sx={{ bgcolor: "#f0f2f5", borderRadius: "16px", p: 0.7 }}>
           <Toolbar>
             <Icon sx={{ mr: 2, color: "rgba(0,0,0,0.82)" }}>
               <PetsIcon />

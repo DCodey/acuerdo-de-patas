@@ -70,12 +70,20 @@
   opacity: 0.9;
 }
 
-.footer-basic .copyright {
+.copyright {
   margin-top: 15px;
   text-align: center;
-  font-size: 13px;
+  font-size: 1.1rem;
   color: #000000;
   margin-bottom: 0;
+}
+.copyright span{
+  color: #d10f0f;
+}
+.copyright .link{
+  text-decoration: none;
+  color: #8243ca;
+  font-size: 1.2rem;
 }
 
 .container {

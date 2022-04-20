@@ -7,7 +7,7 @@ import Modal from "@mui/material/Modal";
 import ModalPatas from "./ModalPatas";
 import pata from "./images/pata.png";
 
-function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
+function FirmaPatas({ nombre, onChange, index, imagen = pata }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -30,7 +30,7 @@ function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
             sx={{ color: "text.primary" }}
             onClick={handleOpen}
           >
-            <img src={imagen} width="60" height="60" alt="pata"/>
+            <img src={imagen} width="60" height="60" alt="pata" />
           </IconButton>
         </Tooltip>
       </Box>
@@ -47,7 +47,7 @@ function FirmaPatas({ nombre, onChange, index, imagen=pata }) {
       </Box>
 
       <Modal open={open} onClose={handleClose}>
-        <ModalPatas ref={ref} nombre={nombre} index={index} setOpen={setOpen}/>
+        <ModalPatas ref={ref} nombre={nombre} index={index} setOpen={setOpen} />
       </Modal>
     </>
   );

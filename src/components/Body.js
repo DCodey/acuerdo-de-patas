@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import '../css/style.css'
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "froala-editor/js/froala_editor.pkgd.min.js";
 
@@ -14,12 +13,6 @@ import AgregarFirmaPata from "./scripts/AgregarFirmaPata";
 
 const Body = () => {
   const { setContenido } = useContext(DataContext);
-
-  const alerta = () => {
-    alert("hola");
-    alert("chau");
-  };
-
   return (
     <>
       <Box className="editor-texto container">
@@ -33,7 +26,7 @@ const Body = () => {
             placeholderText: "Escriba su acuerdo de patas aquí",
           }}
         />
-      </Box>      
+      </Box>
       <AgregarFirmaPata />
     </>
   );

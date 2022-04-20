@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
@@ -8,7 +8,6 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 import { DataContext } from "../context/DataContext";
-import { PropaneSharp } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -108,16 +107,3 @@ const ModalPatas = React.forwardRef((props, ref) => {
 });
 
 export default ModalPatas;
-
-
-
-// setFirmas(
-//   (frm) => {
-//      if ( frm[props.index] == undefined) {
-//       console.log("ingreso");
-//       frm[props.index] = "hola";}
-//     // } else {
-//     //   frm.push({objeto});
-//     // }
-//   }
-// );
